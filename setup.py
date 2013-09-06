@@ -13,6 +13,9 @@ HERE = os.path.dirname(__file__)
 with open(os.path.join(HERE, 'README.rst')) as f:
     long_description = f.read()
 
+with open(os.path.join(HERE, 'requirements.txt')) as f:
+    requirements = f.read()
+
 setup(
     name = release.name,
     version = release.version,
@@ -24,6 +27,6 @@ setup(
     url = release.url,
     zip_safe = False,
     packages = find_packages(),
-    include_package_data = True
-
+    include_package_data = True,
+    install_requires = requirements
 )
